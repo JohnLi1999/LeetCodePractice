@@ -1,19 +1,19 @@
-public static boolean isValid(String s) {
-    // Utility Map
-    Map<Character, Character> map = Map.of('(', ')', '[', ']', '{', '}');
+public static int lengthOfLastWord(String s) {
+    int count = 0;
 
-    Deque<Character> stack = new ArrayDeque<>();
-
-    for (int i = 0; i < s.length(); i++) {
-        char c = s.charAt(i);
-        if (c == '(' || c == '[' || c == '{') {
-            stack.push(c);
+    for (int i = s.length() - 1; i >= 0; i--) {
+        if (isLetter(s.charAt(i))) {
+            count++;
         } else {
-            if (stack.isEmpty() || map.get(stack.pop()).charValue() != c) {
-                return false;
+            if (count != 0) {
+                break;
             }
         }
     }
 
-    return stack.isEmpty();
+    return count;
+}
+
+public static boolean isLetter(char c) {
+    return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
 }
