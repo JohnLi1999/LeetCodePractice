@@ -1,30 +1,19 @@
-public static boolean isPalindrome(int x) {
-    // Any negative number is not a palindrome
-    if (x < 0) {
-        return false;
+public static boolean isValid(String s) {
+    // Utility Map
+    Map<Character, Character> map = Map.of('(', ')', '[', ']', '{', '}');
+
+    Deque<Character> stack = new ArrayDeque<>();
+
+    for (int i = 0; i < s.length(); i++) {
+        char c = s.charAt(i);
+        if (c == '(' || c == '[' || c == '{') {
+            stack.push(c);
+        } else {
+            if (stack.isEmpty() || map.get(stack.pop()).charValue() != c) {
+                return false;
+            }
+        }
     }
 
-    int num = x;
-    int result = 0;
-
-    // Reverse the input number
-    while (num != 0) {
-        result = result * 10 + num% 10;
-        num /= 10;
-    }
-
-    return result == x;
+    return stack.isEmpty();
 }
-
-121
-1. result = 0; x = 121
-2. result = 0 * 10 + 1 = 1; x = 12
-3. result = 1 * 10 + 2 = 12; x = 1
-4. result = 12 * 10 + 1 = 121; x = 0
-result = 121 == 121 => true
-
-10
-1. result = 0; x = 10
-2. result = 0 * 10 + 0 = 0; x = 1
-3. result = 0 * 10 + 1 = 1; x = 0
-result = 0 != 10 => false
