@@ -2,8 +2,9 @@ package easy._0007_Reverse_Integer;
 
 public class Solution {
     /*  https://leetcode.com/problems/reverse-integer/
-        Time Complexity: O(log(x)). There are roughly log(x) (base 10) digits in x.
-        Space Complexity: O(1).
+        Time Complexity: O(log(x))
+            There are roughly log(x) (base 10) digits in x.
+        Space Complexity: O(1)
      */
     public static int reverse(int x) {
         int result = 0;
