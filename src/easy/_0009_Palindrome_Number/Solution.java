@@ -2,10 +2,10 @@ package easy._0009_Palindrome_Number;
 
 public class Solution {
     /*  https://leetcode.com/problems/palindrome-number/
-        Time Complexity: O(log(n)) (base 10).
+        Time Complexity: O(log(n)) (base 10)
             We divided the input by 10 for every iteration,
             so the time complexity is O(log(n)) (base 10).
-        Space complexity: O(1).
+        Space complexity: O(1)
      */
     public static boolean isPalindrome(int x) {
         /*  Special cases
