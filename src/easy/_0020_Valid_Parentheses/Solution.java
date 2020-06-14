@@ -5,6 +5,14 @@ import java.util.Deque;
 import java.util.Map;
 
 public class Solution {
+    /*  https://leetcode.com/problems/valid-parentheses/
+        Time complexity : O(n)
+            Because we simply traverse the given string one character at a time, and
+            push and pop operations on a stack take O(1) time.
+        Space complexity : O(n)
+            As we push all opening brackets onto the stack, and
+            in the worst case, we will end up pushing all the brackets onto the stack. e.g. ((((((((((.
+     */
     public static boolean isValid(String s) {
         // Utility Map
         Map<Character, Character> map = Map.of(
