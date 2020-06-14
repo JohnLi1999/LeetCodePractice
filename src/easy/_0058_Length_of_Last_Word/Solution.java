@@ -1,6 +1,10 @@
 package easy._0058_Length_of_Last_Word;
 
 public class Solution {
+    /*  https://leetcode.com/problems/length-of-last-word/
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+     */
     public static int lengthOfLastWord(String s) {
         int count = 0;
 
