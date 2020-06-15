@@ -38,6 +38,9 @@
 - `static <T> List<T>  asList(T... a)` 
 - `static void  sort(Object[] a)`
 - `static void  sort(int[] a)`
+
+## MATH
+- `static int  abs(int a)`
     
 ## Integer
 - `Integer.MAX_VALUE` = 2<sup>31</sup>-1
