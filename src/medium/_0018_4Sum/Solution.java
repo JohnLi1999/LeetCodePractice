@@ -6,11 +6,11 @@ import java.util.List;
 
 public class Solution {
     /*  https://leetcode.com/problems/4sum/
-        Time Complexity: O((n+k)^(k−1)), or O((n+k)^3) for 4Sum
-            When n >> k, time complexity is O(n^(k-1)) and O(n^3) for 4Sum
-            We have (k - 2) loops, and twoSum is O(n+k).
-            Remove elements from temporal result list takes O(k) time complexity
+        Time Complexity: O(n^(k−1)), or O(n^3) for 4Sum
+            We have (k - 2) loops, and twoSum is O(n).
             Note that for k > 2, sorting the array does not change the overall time complexity.
+            Remove elements from temporal result list takes O(k) time complexity, and we treat k
+            as a constant in this problem
         Space Complexity: O(k).
             The temporal result list holds up to k elements
             Note that, for the purpose of complexity analysis, we ignore the memory required for the output.
