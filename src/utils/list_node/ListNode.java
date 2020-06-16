@@ -18,7 +18,7 @@ public class ListNode {
     }
 
     // Helper functions
-    public ListNode arrayToListNode(int[] arr) {
+    public ListNode arrayToListNodes(int[] arr) {
         ListNode listNode = new ListNode(arr[arr.length - 1]);
         ListNode currentNode = listNode;
 

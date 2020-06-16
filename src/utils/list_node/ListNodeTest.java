@@ -15,7 +15,7 @@ class ListNodeTest {
 
     @Test
     void testArrayToListNode() {
-        ListNode.printList(new ListNode().arrayToListNode(new int[] {3, 4, 2})); // 2 -> 4 -> 3
-        ListNode.printList(new ListNode().arrayToListNode(new int[] {1, 9, 8})); // 8 -> 9 -> 1
+        ListNode.printList(new ListNode().arrayToListNodes(new int[] {3, 4, 2})); // 2 -> 4 -> 3
+        ListNode.printList(new ListNode().arrayToListNodes(new int[] {1, 9, 8})); // 8 -> 9 -> 1
     }
 }
