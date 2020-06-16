@@ -1,5 +1,7 @@
 package medium._0002_Add_Two_Numbers;
 
+import utils.list_node.ListNode;
+
 public class Solution {
     /*  https://leetcode.com/problems/add-two-numbers/
         Time Complexity: O(max(m, n))
@@ -49,14 +51,5 @@ public class Solution {
 
         // Ignore the dummy head and returned the rest of the nodes in the list
         return dummyHead.next;
-    }
-
-    /** Definition for singly-linked list. */
-    public static class ListNode {
-        int val;
-        ListNode next;
-        ListNode() {}
-        ListNode(int val) { this.val = val; }
-        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
 }
