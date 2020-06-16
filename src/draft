@@ -1,16 +1,25 @@
-public static boolean hasCycle(ListNode head) {
-    if (head == null || head.next == null) return false;
+public static ListNode detectCycle(ListNode head) {
+    if (head == null || head.next == null) return null;
 
-    ListNode slow = head, fast = head.next;
+    ListNode slow = head;
+    ListNode fast = head.next;
 
-    while (true) {
-        if (fast.equals(slow)) {
-            return true;
-        } else if (fast.next == null || fast.next.next == null) {
-            return false;
-        } else {
-            slow = slow.next;
-            fast = fast.next.next;
+    while (slow != fast) {
+        if (fast == null || fast.next == null) {
+            return null;
         }
+
+        slow = slow.next;
+        fast = fast.next.next;
     }
+
+    slow = head;
+    fast = fast.next;
+
+    while (slow != fast) {
+        slow = slow.next;
+        fast = fast.next;
+    }
+
+    return fast;
 }
