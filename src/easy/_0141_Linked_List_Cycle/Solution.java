@@ -33,9 +33,11 @@ public class Solution {
     public static boolean hasCycle_TwoPointer(ListNode head) {
         if (head == null || head.next == null) return false;
 
+        // Initialize a fast and a slow pointer where fast's speed is two time than slow's speed
         ListNode slow = head, fast = head.next;
 
         while (slow != fast) {
+            // If the pointer reaches null, it indicates the list has a end and means there is not a cycle in the list
             if (fast == null || fast.next == null) {
                 return false;
             }
@@ -44,6 +46,7 @@ public class Solution {
             fast = fast.next.next;
         }
 
+        // If fast and slow pointer meet, then there is a cycle int the list
         return true;
     }
 
