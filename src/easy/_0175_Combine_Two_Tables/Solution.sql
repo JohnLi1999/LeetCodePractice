@@ -1,4 +1,5 @@
-# MySQL
+--- https://leetcode.com/problems/combine-two-tables/
+
 SELECT P.FirstName, P.LastName, A.City, A.State
 FROM Person AS P
 LEFT OUTER JOIN Address AS A
