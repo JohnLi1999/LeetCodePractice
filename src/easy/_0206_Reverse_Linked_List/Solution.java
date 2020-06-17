@@ -24,6 +24,13 @@ public class Solution {
         return prev;
     }
 
+    /*
+        Time complexity : O(n)
+            Assume that n is the list's length, the time complexity is O(n).
+        Space complexity : O(n)
+            The extra space comes from implicit stack space due to recursion.
+            The recursion could go up to n levels deep.
+     */
     public static ListNode reverseList_Recursive(ListNode head) {
         // Find the last node in the list
         if (head == null || head.next == null) {
