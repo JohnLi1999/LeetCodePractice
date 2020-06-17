@@ -2,7 +2,7 @@
 SELECT MAX(Salary) as SecondHighestSalary
 FROM Employee
 WHERE Salary < (SELECT MAX(Salary)
-                FROM Employee)
+                FROM Employee);
 
 # Way 2
 SELECT
@@ -11,4 +11,4 @@ SELECT
          FROM Employee
          ORDER BY Salary DESC
          LIMIT 1, 1),
-    NULL) AS SecondHighestSalary
+    NULL) AS SecondHighestSalary;
