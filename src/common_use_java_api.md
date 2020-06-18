@@ -18,10 +18,29 @@
 
 ## Deque
 - `boolean isEmpty()`
-### Stack Methods - ArrayDeque
-- `void push(E e)`
-- `E pop()`
-- `E peek()`
+- `int size()`
+
+### LinkedList
+| Queue Methods        | Equivalent Deque Methods |
+| -------------------- | ------------------------ |
+| `boolean add(E e)`   | `void addLast(E e)`      |
+| `boolean offer(E e)` | `boolean offerLast(E e)` |
+| `E remove()`         | `E removeFirst()`        |
+| `E poll()`           | `E pollFirst(E e)`       |
+| `E element()`        | `E getFirst()`           |
+| `E peek()`           | `E peekFirst()`          |
+
+1. Methods `offer(E e)` and `offerLast(E e)` are preferable to `add(E e)` and `addLast(E e)`
+2. Methods `E removeFirst()` and `E getFirst(E e)` throw `NoSuchElementException` error when the deque is empty 
+3. Methods `E pollFirst(E e)` and `E peekFirst()` return `null` when the deque is empty 
+
+### ArrayDeque
+| Stack Methods    | Equivalent Deque Methods |
+| ---------------- | ------------------------ |
+| `void push(E e)` | `void addFirst(E e)`     |
+| `E pop()`        | `E removeFirst()`        |
+| `E peek()`       | `E getFirst()`           |
+
 
 ## Set
 - `boolean add(E e)`
@@ -43,8 +62,8 @@
 - `static int  abs(int a)`
     
 ## Integer
-- `Integer.MAX_VALUE` = 2<sup>31</sup>-1
-- `Integer.MIN_VALUE` = -2<sup>31</sup>
+- `Integer.MAX_VALUE` = 2<sup>31</sup>-1 = 2147483647
+- `Integer.MIN_VALUE` = -2<sup>31</sup> = -2147483648
 
 ## Character
 - `char charValue()`
