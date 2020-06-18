@@ -3,11 +3,11 @@
 ## Map
 - `boolean containsKey(Object key)`
 - `V get(Object key)`
-- `default V getOrDefault​(Object key, V defaultValue)`
+- `default V  getOrDefault​(Object key, V defaultValue)`
 - `V put(K key, V value)`
 - `V remove(Object key)`
-- `default V replace(K key, V value)`
-- `default boolean replace(K key, V oldValue, V newValue)`
+- `default V  replace(K key, V value)`
+- `default boolean  replace(K key, V oldValue, V newValue)`
 - `Set<K> keySet()`
 - `boolean isEmpty()`
 - `int size()`
@@ -48,7 +48,6 @@
 | `E pop()`        | `E removeFirst()`        |
 | `E peek()`       | `E getFirst()`           |
 
-
 ## Set
 - `boolean add(E e)`
 - `boolean contains(Object o)`
@@ -59,6 +58,14 @@
 ## String
 - `int length()`
 - `char charAt(int index)` 
+
+## StringBuilder
+- `StringBuilder append​(String str)`
+- `StringBuilder delete​(int start, int end)`
+- `StringBuilder replace​(int start, int end, String str)` 
+- `char charAt​(int index)`
+- `int length()`
+- `StringBuilder reverse()`
 
 ## Arrays
 - `static <T> List<T>  asList(T... a)` 
@@ -71,6 +78,8 @@
 ## Integer
 - `Integer.MAX_VALUE` = 2<sup>31</sup>-1 = 2147483647
 - `Integer.MIN_VALUE` = -2<sup>31</sup> = -2147483648
+- `String toString()`
+- `static String  toString​(int i)`
 
 ## Character
 - `char charValue()`
