@@ -1,36 +1,21 @@
-private Deque<Integer> stack;
-private Deque<Integer> helper;
+public static boolean isAnagram(String s, String t) {
+    if (s.length() != t.length()) return false;
 
-/** Initialize your data structure here. */
-public MyQueue() {
-    stack = new ArrayDeque<>();
-    helper = new ArrayDeque<>();
-}
+    int[] alphabet = new int[26];
 
-/** Push element x to the back of queue. */
-public void push(int x) {
-    while(!stack.isEmpty()) {
-        helper.push(stack.pop());
+    for (int i = 0; i < s.length(); i++) {
+        alphabet[s.charAt(i) - 'a']++;
     }
 
-    stack.push(x);
-
-    while (!helper.isEmpty()) {
-        stack.push(helper.pop());
+    for (int i = 0; i < t.length(); i++) {
+        alphabet[t.charAt(i) - 'a']--;
     }
-}
 
-/** Removes the element from in front of queue and returns that element. */
-public int pop() {
-    return stack.pop();
-}
+    for (int i = 0; i < alphabet.length; i++) {
+        if (alphabet[i] != 0) {
+            return false;
+        }
+    }
 
-/** Get the front element. */
-public int peek() {
-    return stack.peek();
-}
-
-/** Returns whether the queue is empty. */
-public boolean empty() {
-    return stack.isEmpty();
+    return true;
 }

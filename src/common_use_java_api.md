@@ -3,7 +3,14 @@
 ## Map
 - `boolean containsKey(Object key)`
 - `V get(Object key)`
+- `default V getOrDefault​(Object key, V defaultValue)`
 - `V put(K key, V value)`
+- `V remove(Object key)`
+- `default V replace(K key, V value)`
+- `default boolean replace(K key, V oldValue, V newValue)`
+- `Set<K> keySet()`
+- `boolean isEmpty()`
+- `int size()`
 - `static <K, V> Map<K, V>  of(K k1, V v1, K k2, V v2, K k3, V v3)`
     
 ## List
