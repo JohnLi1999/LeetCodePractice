@@ -4,6 +4,8 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 public class MyStack {
+    /* https://leetcode.com/problems/implement-stack-using-queues/ */
+
     // Declare a queue
     private Deque<Integer> queue;
 
