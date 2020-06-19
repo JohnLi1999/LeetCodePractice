@@ -76,21 +76,21 @@ public class Solution {
      */
     public static int findKthLargest_Heap(int[] nums, int k) {
         // Initialize a min-heap (PriorityQueue is a min-heap by default)
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
 
         for (int num : nums) {
-            pq.add(num);
+            minHeap.add(num);
 
             /*  Remove the smallest value and
                 keep the size of heap to be k
              */
-            if (pq.size() > k) {
-                pq.poll();
+            if (minHeap.size() > k) {
+                minHeap.poll();
             }
         }
 
         // The top of the heap is the kth largest element in the array
-        return pq.peek();
+        return minHeap.peek();
     }
 
     /*  Time Complexity: O(n*log(n))
