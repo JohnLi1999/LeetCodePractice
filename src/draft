@@ -1,0 +1,40 @@
+public static int findKthLargest_Heap(int[] nums, int k) {
+    List<Integer> list = new ArrayList<>();
+    quickSelect(nums, 0, nums.length, k, result);
+    return result[0];
+}
+
+private static void quickSelect(int[] nums, int start, int end, int k, List<Integer> result) {
+    if (result.size() != 0) {
+        return ;
+    }
+
+    int pivotIndex = partition(nums, start, end);
+    quickSelect(nums, pivotIndex + 1, end);
+}
+
+private static int partition(int[] nums, int start, int end, int k, List<Integer> result) {
+    int pivot = nums[start];
+    int i = start;
+    int j = end;
+
+    while (i < j) {
+        while (i < j && nums[--j] >= pivot);
+        if (i < j) {
+            nums[i] = nums[j];
+        }
+
+        while (i < j && nums[++i] <= pivot);
+        if (i < j) {
+            nums[j] = nums[i];
+        }
+    }
+
+    arr[i] = pivot;
+
+    if (i == nums.length - k) {
+        result.add(pivot);
+    }
+
+    return i;
+}

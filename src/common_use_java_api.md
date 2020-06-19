@@ -48,6 +48,16 @@
 | `E pop()`        | `E removeFirst()`        |
 | `E peek()`       | `E getFirst()`           |
 
+## PriorityQueue (Min-Heap by default)
+- `PriorityQueue​(Collection<? extends E> c)`
+- `boolean add​(E e)`
+- `boolean offer​(E e)`
+- `E peek()`
+- `E poll()`
+- `boolean contains​(Object o)`
+- `int size()`
+
+
 ## Set
 - `boolean add(E e)`
 - `boolean contains(Object o)`
@@ -71,15 +81,19 @@
 - `static <T> List<T>  asList(T... a)` 
 - `static void  sort(Object[] a)`
 - `static void  sort(int[] a)`
-
-## MATH
-- `static int  abs(int a)`
+- `static <T> void  sort​(T[] a, Comparator<? super T> c)`
     
 ## Integer
 - `Integer.MAX_VALUE` = 2<sup>31</sup>-1 = 2147483647
 - `Integer.MIN_VALUE` = -2<sup>31</sup> = -2147483648
 - `String toString()`
 - `static String  toString​(int i)`
+
+## Collections
+- `static <T> Comparator<T>  reverseOrder()`
+
+## MATH
+- `static int  abs(int a)`
 
 ## Character
 - `char charValue()`
