@@ -27,7 +27,15 @@
 - `boolean isEmpty()`
 - `int size()`
 
-### LinkedList
+### Summary of Deque Methods
+|         | First Element (Head) | First Element (Head) | Last Element (Tail) | Last Element (Tail) |
+| ------- | -------------------- | -------------------- | ------------------- | ------------------- |
+|         | Throw Exceptions     | Special Value        | Throw Exceptions    | Special Value       |
+| Insert  | addFirst(e)          | offerFirst(e)        | addLast(e)          | offerLast(e)        |
+| Remove  | removeFirst()        | pollFirst()          | removeLast()        | pollLast()          |
+| Examine | getFirst()           | peekFirst()          | getLast()           | peekLast()          |
+
+### Queue - LinkedList
 | Queue Methods        | Equivalent Deque Methods |
 | -------------------- | ------------------------ |
 | `boolean add(E e)`   | `void addLast(E e)`      |
@@ -41,12 +49,14 @@
 2. Methods `E removeFirst()` and `E getFirst(E e)` throw `NoSuchElementException` error when the deque is empty 
 3. Methods `E pollFirst(E e)` and `E peekFirst()` return `null` when the deque is empty 
 
-### ArrayDeque
+### Stack - ArrayDeque
 | Stack Methods    | Equivalent Deque Methods |
 | ---------------- | ------------------------ |
 | `void push(E e)` | `void addFirst(E e)`     |
 | `E pop()`        | `E removeFirst()`        |
 | `E peek()`       | `E getFirst()`           |
+
+#### Both `LinkedList` and `ArrayDeque` can be used as a `Deque`
 
 ## PriorityQueue (Min-Heap by default)
 - `PriorityQueue​(Collection<? extends E> c)`
