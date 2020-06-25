@@ -19,6 +19,7 @@
 - `boolean contains(Object o)`
 - `boolean isEmpty()`
 - `int size()`
+- `E set​(int index, E element)`
 - `E remove(int index)`
 - `boolean remove(Object o)`
 - `static <E> List<E>  of(E e1, E e2, E e3)`
