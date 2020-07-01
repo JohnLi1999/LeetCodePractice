@@ -1,55 +1,20 @@
-public static double myPow(double x, int n) {
-    double result = 1.0;
+public static int majorityElement(int[] nums) {
+    Map<Integer, Integer> map = new HashMap<>();
 
-    List<PowThread> threads = new ArrayList<>();
-
-    for (int i = 0; i < 10; i++) {
-        threads.add(new PowThread(x, n / 10));
-    }
-    threads.add(new PowThread(x, n % 10));
-
-    for (PowThread thread : threads) {
-        thread.start();
-    }
-
-    for (PowThread thread : threads) {
-        try {
-            thread.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+    for (int num : nums) {
+        if (map.containsKey(num)) {
+            map.replace(num, map.get(num) + 1);
+        } else {
+            map.put(num, 1);
         }
     }
 
-    for (PowThread thread : threads) {
-        result *= thread.getResult();
-    }
-
-    return result;
-}
-
-private class PowThread extends Thread {
-    private double x;
-    private int n;
-    private double result = 1.0;
-
-    public PowThread(double x, int n) {
-        this.x = x;
-        this.n = n;
-    }
-
-    public void run() {
-        while (n > 0) {
-            result *= x;
-            n--;
-        }
-
-        while (n < 0) {
-            result /= x;
-            n++;
+    int half = nums.length / 2;
+    for (Integer num : map.keySet()) {
+        if (map.get(num) > half) {
+            return num;
         }
     }
 
-    public double getResult() {
-        return result;
-    }
+    return 0;
 }

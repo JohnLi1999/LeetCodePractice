@@ -1,5 +1,10 @@
-0025 - Reverse k-group nodes
-0215 - Quick Sort
-0018 - kSum
-0235 && 0236 - Lowest Common Ancestor
-0050 - Binary Exponentiation
+Array
+    0215 - Quick Sort
+    0018 - kSum
+LinkedList
+    0025 - Reverse k-group nodes
+Tree
+    0235 && 0236 - Lowest Common Ancestor
+Divide and Conquer
+    0050 - Binary Exponentiation
+    0169 - Six different ways to find majority element
