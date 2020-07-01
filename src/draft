@@ -1,14 +1,55 @@
-public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-    if (root == null) {
-        return null;
+public static double myPow(double x, int n) {
+    double result = 1.0;
+
+    List<PowThread> threads = new ArrayList<>();
+
+    for (int i = 0; i < 10; i++) {
+        threads.add(new PowThread(x, n / 10));
+    }
+    threads.add(new PowThread(x, n % 10));
+
+    for (PowThread thread : threads) {
+        thread.start();
     }
 
-    if (root.val == p.val || root.val == q.val) {
-        return root;
+    for (PowThread thread : threads) {
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
-    TreeNode left_lca = lowestCommonAncestor(root.left, p, q);
-    TreeNode right_lca = lowestCommonAncestor(root.right, p, q);
+    for (PowThread thread : threads) {
+        result *= thread.getResult();
+    }
 
-    return (left_lca != null && right_lca != null) ? root : null;
+    return result;
+}
+
+private class PowThread extends Thread {
+    private double x;
+    private int n;
+    private double result = 1.0;
+
+    public PowThread(double x, int n) {
+        this.x = x;
+        this.n = n;
+    }
+
+    public void run() {
+        while (n > 0) {
+            result *= x;
+            n--;
+        }
+
+        while (n < 0) {
+            result /= x;
+            n++;
+        }
+    }
+
+    public double getResult() {
+        return result;
+    }
 }
