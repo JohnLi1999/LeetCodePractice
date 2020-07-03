@@ -1,20 +1,14 @@
-public static int majorityElement(int[] nums) {
-    Map<Integer, Integer> map = new HashMap<>();
+public static int maxProfit(int[] prices) {
+    int max_profit = 0;
 
-    for (int num : nums) {
-        if (map.containsKey(num)) {
-            map.replace(num, map.get(num) + 1);
-        } else {
-            map.put(num, 1);
+    for (int i = 0; i < prices.length - 1; i++) {
+        for (int j = i + 1; j < prices.length; j++) {
+            int profit = prices[j] - prices[i];
+            if (profit > max_profit) {
+                max_profit = profit;
+            }
         }
     }
 
-    int half = nums.length / 2;
-    for (Integer num : map.keySet()) {
-        if (map.get(num) > half) {
-            return num;
-        }
-    }
-
-    return 0;
+    return max_profit;
 }
