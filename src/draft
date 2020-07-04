@@ -1,19 +1,29 @@
-public static int maxProfit(int[] prices) {
-    int profit = 0;
-    int buy;
+public static List<List<Integer>> levelOrder(TreeNode root) {
+    List<List<Integer>> result = new ArrayList<>();
+    Map<Integer, List> map = new TreeMap<>();
 
-    for (int i = 0; i < prices.length - 1; i++) {
-        if (prices[i] < prices[i + 1]) {
-            buy = prices[i];
+    DFS(root, 0, map);
 
-            while (i < prices.length - 1 && prices[i] <= prices[i + 1]) {
-                i++;
-            }
-
-            int sell = prices[i];
-            profit += (sell - buy);
-        }
+    for (Integer i : map.keySet()) {
+        result.add(map.get(i));
     }
 
-    return profit;
+    return result;
+}
+
+private static void DFS(TreeNode root, int level, Map<Integer, List> map) {
+    if (root == null) {
+        return;
+    }
+
+    if (!map.containsKey(level)) {
+        List<Integer> list = new ArrayList<>();
+        list.add(root.val);
+        map.put(level, list);
+    } else {
+        map.get(level).add(root.val);
+    }
+
+    DFS(root.left, level + 1, map);
+    DFS(root.right, level + 1, map);
 }

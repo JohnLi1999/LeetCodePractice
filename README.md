@@ -14,6 +14,7 @@
 - `static <K, V> Map<K, V>  of(K k1, V v1, K k2, V v2, K k3, V v3)`
     
 ## List
+- `E get​(int index)`
 - `boolean add(E e)`
 - `boolean addAll(Collection<? extends E> c)`
 - `boolean contains(Object o)`
