@@ -1,14 +1,19 @@
 public static int maxProfit(int[] prices) {
-    int max_profit = 0;
+    int profit = 0;
+    int buy;
 
     for (int i = 0; i < prices.length - 1; i++) {
-        for (int j = i + 1; j < prices.length; j++) {
-            int profit = prices[j] - prices[i];
-            if (profit > max_profit) {
-                max_profit = profit;
+        if (prices[i] < prices[i + 1]) {
+            buy = prices[i];
+
+            while (i < prices.length - 1 && prices[i] <= prices[i + 1]) {
+                i++;
             }
+
+            int sell = prices[i];
+            profit += (sell - buy);
         }
     }
 
-    return max_profit;
+    return profit;
 }
