@@ -1,10 +1,15 @@
-public static int maxDepth(TreeNode root) {
+public static int minDepth(TreeNode root) {
     if (root == null) {
         return 0;
     }
 
-    int leftMaxDepth = 1 + maxDepth(root.left);
-    int rightMaxDepth = 1 + maxDepth(root.right);
-
-    return leftMaxDepth > rightMaxDepth ? leftMaxDepth : rightMaxDepth;
+    if (root.left == null) {
+        return 1 + minDepth(root.right); // return minDepth in right subtree
+    } else if (root.right == null) {
+        return 1 + minDepth(root.left); // return minDepth in left subtree
+    } else {
+        int leftMinDepth = minDepth(root.left);
+        int rightMinDepth = minDepth(root.right);
+        return 1 + (leftMinDepth < rightMinDepth ? leftMinDepth : rightMinDepth);
+    }
 }
