@@ -88,6 +88,7 @@
 - `char charAt​(int index)`
 - `int length()`
 - `StringBuilder reverse()`
+- `String toString()`
 
 ## Arrays
 - `static <T> List<T>  asList(T... a)` 

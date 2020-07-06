@@ -1,15 +1,28 @@
-public static int minDepth(TreeNode root) {
-    if (root == null) {
-        return 0;
+public static List<String> generateParenthesis(int n) {
+    List<String> result = new LinkedList<>();
+    StringBuilder temp = new StringBuilder();
+
+    int numFront = 0;
+    int numBack = 0;
+
+    generate(numFront, numBack, n, temp, result);
+
+    return result;
+}
+
+private static void generate(int numFront, int numBack, int n, StringBuilder temp, List<String> result) {
+    if (numFront > n || numBack > n || numBack > numFront) {
+        return;
     }
 
-    if (root.left == null) {
-        return 1 + minDepth(root.right); // return minDepth in right subtree
-    } else if (root.right == null) {
-        return 1 + minDepth(root.left); // return minDepth in left subtree
+    temp.append("(");
+    generate(numFront + 1, numBack, n, temp, result);
+
+    temp.replace(temp.length() - 1, temp.length(), ")");
+    if (temp.length() == 2 * n) {
+        result.add(temp.toString());
+        temp.delete(temp.length() - 1, temp.length());
     } else {
-        int leftMinDepth = minDepth(root.left);
-        int rightMinDepth = minDepth(root.right);
-        return 1 + (leftMinDepth < rightMinDepth ? leftMinDepth : rightMinDepth);
+        generate(numFront, numBack + 1, n, temp, result);
     }
 }
