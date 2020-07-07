@@ -42,29 +42,25 @@ public class Solution {
 
     // Backtracking with StringBuilder
     private static void backtrack(int numOpen, int numClose, int n, int pos, StringBuilder temp, List<String> result) {
-        // Validate current string. If it is invalid, then remove the last character
-        if (numOpen > n || numClose > n || numClose > numOpen) {
-            temp.delete(temp.length() - 1, temp.length());
+        // Add the valid string into result list
+        if (temp.length() == 2 * n) {
+            result.add(temp.toString());
             return;
         }
 
-        // Add the open bracket and go to next position
-        temp.append("(");
-        backtrack(numOpen + 1, numClose, n, pos + 1, temp, result);
+        // Add one more "(" if the number of open brackets is smaller than n
+        if (numOpen < n) {
+            backtrack(numOpen + 1, numClose, n, pos + 1, temp.append("("), result);
+        }
 
-        // Clear the unnecessary characters in the  StringBuilder
+        // Clear the unnecessary characters in the StringBuilder
         if (temp.length() > pos) {
             temp.delete(pos, temp.length());
         }
 
-        // Add the close bracket
-        temp.append(")");
-        if (temp.length() == 2 * n) {
-            // Add the valid string into result list
-            result.add(temp.toString());
-        } else {
-            // Go to next position
-            backtrack(numOpen, numClose + 1, n, pos + 1, temp, result);
+        // Add one more ")" if the number of close brackets is smaller than the number of open brackets
+        if (numClose < numOpen) {
+            backtrack(numOpen, numClose + 1, n, pos + 1, temp.append(")"), result);
         }
     }
 }
