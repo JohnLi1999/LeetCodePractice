@@ -1,28 +1,37 @@
-public static List<String> generateParenthesis(int n) {
-    List<String> result = new LinkedList<>();
-    StringBuilder temp = new StringBuilder();
+private static int SIZE;
+private static int[] queens;
+private static int[] result = new int[1];
+private static Set<Integer> column = new HashSet<>();
+private static Set<Integer> diagonal = new HashSet<>();
+private static Set<Integer> anti_diagonal = new HashSet<>();
 
-    int numFront = 0;
-    int numBack = 0;
+public static int totalNQueens(int n) {
+    SIZE = n;
+    queens = new int[SIZE];
 
-    generate(numFront, numBack, n, temp, result);
-
-    return result;
+    backtrack(0, result);
+    return result[0];
 }
 
-private static void generate(int numFront, int numBack, int n, StringBuilder temp, List<String> result) {
-    if (numFront > n || numBack > n || numBack > numFront) {
-        return;
+private static void backtrack(int row, int[] result) {
+    if (row >= SIZE) {
+        result[0]++;
     }
 
-    temp.append("(");
-    generate(numFront + 1, numBack, n, temp, result);
+    for (int col = 0; col < SIZE; col++) {
+        if (column.contains(col) || diagonal.contains(row - col) || anti_diagonal.contains(row + col) {
+            continue;
+        }
 
-    temp.replace(temp.length() - 1, temp.length(), ")");
-    if (temp.length() == 2 * n) {
-        result.add(temp.toString());
-        temp.delete(temp.length() - 1, temp.length());
-    } else {
-        generate(numFront, numBack + 1, n, temp, result);
+        queens[row] = col;
+        column.add(col);
+        diagonal.add(row - col);
+        anti_diagonal.add(row + col);
+
+        backtrack(row + 1, result);
+
+        column.remove(col);
+        diagonal.remove(row - col);
+        anti_diagonal.remove(row + col);
     }
 }
