@@ -32,6 +32,7 @@ public class Solution {
         // If we successfully find N positions, we can add it to the result list
         if (row >= SIZE) {
             addResult(queens);
+            return;
         }
 
         // Iterate all the columns in the current row
