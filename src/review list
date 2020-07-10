@@ -11,3 +11,4 @@ Divide and Conquer
     0169 - Six different ways to find majority element
 DFS
     0051 - N-Queens
+    0036 && 0037 - Sudoku (box index)
