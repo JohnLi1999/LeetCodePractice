@@ -70,25 +70,23 @@ public class Solution {
             placeNextNumber(row, col, board);
         } else {
             int box_index = (row / 3) * 3 + col / 3;
-            for (int i = 1; i <= board.length; i++) {
-                char n = (char) (i + '0');
-
-                if (rows[row].contains(n) || cols[col].contains(n) || boxes[box_index].contains(n)) {
+            for (char i = '1'; i <= '9'; i++) {
+                if (rows[row].contains(i) || cols[col].contains(i) || boxes[box_index].contains(i)) {
                     continue;
                 }
 
-                board[row][col] = n;
-                rows[row].add(n);
-                cols[col].add(n);
-                boxes[box_index].add(n);
+                board[row][col] = i;
+                rows[row].add(i);
+                cols[col].add(i);
+                boxes[box_index].add(i);
 
                 placeNextNumber(row, col, board);
 
                 if (!foundSolution) {
                     board[row][col] = '.';
-                    rows[row].remove(n);
-                    cols[col].remove(n);
-                    boxes[box_index].remove(n);
+                    rows[row].remove(i);
+                    cols[col].remove(i);
+                    boxes[box_index].remove(i);
                 }
             }
         }
