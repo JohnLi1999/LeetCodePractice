@@ -110,4 +110,5 @@
 
 ## Character
 - `char charValue()`
+- `static int  getNumericValue​(char ch)`
 
