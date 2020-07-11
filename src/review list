@@ -12,3 +12,5 @@ Divide and Conquer
 DFS
     0051 - N-Queens
     0036 && 0037 - Sudoku (box index)
+Binary Search
+    0069 - Sqrt (avoid overflow + 4 solutions + double result)
