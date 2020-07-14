@@ -57,6 +57,7 @@ public class Backtracking_MyWay {
         boolean result = false;
         board[row][col] = '#';
 
+        // Check top, right, left, and bottom of the current position
         if (backtrack(row + 1, col, index + 1, word) ||
             backtrack(row, col + 1, index + 1, word) ||
             backtrack(row - 1, col, index + 1, word) ||
