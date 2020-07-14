@@ -1,26 +1,34 @@
-public static boolean isPerfectSquare(int num) {
-    if (num < 2) {
-        return true;
-    }
-
-    int sqrt = sqrt(num);
-    return sqrt * sqrt == num;
+public static boolean exist(char[][] board, String word) {
+    return false;
 }
 
-public static int sqrt(int num) {
-    int left = 0, right = num, mid;
+private List<Pos> adjacentElements(Pos pos, boolean[][] used) {
+    List<Pos> list = new ArrayList<>();
 
-    while (left <= right) {
-        mid = (left + right) / 2;
-
-        if (mid == num / mid) {
-            return mid;
-        } else if (mid < num / mid) {
-            left = mid + 1;
-        } else {
-            right = mid - 1;
+    for (int i = pos.x - 1; i <= pos.x + 1 ; i++) {
+        for (int j = pos.y - 1; j <= pos.y + 1; j++) {
+            if (i < 0 || i >= used.length ||
+                j < 0 || j >= used[i].length ||
+                (i == pos.x && j == pos.y) || used[i][j] ) {
+                list.add(new Pos(i, j));
+            }
         }
     }
 
-    return right;
+    return list;
+}
+
+private class Pos {
+    public int x;
+    public int y;
+
+    public Pos(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    @Override
+    public String toString() {
+        return "[" + x + ", " + y + "]";
+    }
 }
