@@ -12,16 +12,16 @@ public class Solution {
     public static List<String> generateParenthesis(int n) {
         List<String> result = new LinkedList<>();
 
-        // Backtracking_StringBuilder with String
+        // Backtracking_MyWay with String
 //        backtrack(0, 0, n, "", result);
 
-        // Backtracking_StringBuilder with StringBuilder
+        // Backtracking_MyWay with StringBuilder
         backtrack(0, 0, n, 0, new StringBuilder(), result);
 
         return result;
     }
 
-    // Backtracking_StringBuilder with String
+    // Backtracking_MyWay with String
     private static void backtrack(int numOpen, int numClose, int n, String temp, List<String> result) {
         // Add the valid string into result list
         if (temp.length() == 2 * n) {
@@ -40,7 +40,7 @@ public class Solution {
         }
     }
 
-    // Backtracking_StringBuilder with StringBuilder
+    // Backtracking_MyWay with StringBuilder
     private static void backtrack(int numOpen, int numClose, int n, int pos, StringBuilder temp, List<String> result) {
         // Add the valid string into result list
         if (temp.length() == 2 * n) {

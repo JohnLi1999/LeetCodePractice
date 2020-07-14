@@ -82,7 +82,7 @@ public class Backtracking {
 
     public void backtrack(int row, int col) {
     /*
-    Backtracking_StringBuilder
+    Backtracking_MyWay
     */
         // if the cell is empty
         if (board[row][col] == '.') {

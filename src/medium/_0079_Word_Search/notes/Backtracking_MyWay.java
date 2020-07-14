@@ -15,12 +15,10 @@ package medium._0079_Word_Search.notes;
         The maximum length of the call stack would be the length of the word.
         Therefore, the space complexity of the algorithm is O(L).
  */
-public class Backtracking_StringBuilder {
+public class Backtracking_MyWay {
     private int ROWS;
     private int COLS;
     private char[][] board;
-    private int[] rowOffsets = {-1, 0, 1, 0};
-    private int[] colOffsets = {0, 1, 0, -1};
 
     public boolean exist(char[][] board, String word) {
         this.board = board;
@@ -53,20 +51,19 @@ public class Backtracking_StringBuilder {
 
         /* Step 3
             3.1 - Set the result to false initially
-            3.2 - Append the current char
-            3.3 - Mark the path before the next exploration
-            3.4 - Explore the neighbors in DFS               */
+            3.2 - Mark the path before the next exploration
+            3.3 - Explore the neighbors in DFS               */
 
         boolean result = false;
         board[row][col] = '#';
 
-        for (int i = 0; i < rowOffsets.length; i++) {
-            result = backtrack(row + rowOffsets[i], col + colOffsets[i], index + 1, word);
+        if (backtrack(row + 1, col, index + 1, word) ||
+            backtrack(row, col + 1, index + 1, word) ||
+            backtrack(row - 1, col, index + 1, word) ||
+            backtrack(row, col - 1, index + 1, word)) {
             /* Instead of returning directly once we find a match,
                we simply break out of the loop and do the cleanup before returning  */
-            if (result) {
-                break;
-            }
+            result = true;
         }
 
         /* Step 4 - clean up and return the result */

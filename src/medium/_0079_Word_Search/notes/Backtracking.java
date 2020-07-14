@@ -15,7 +15,7 @@ package medium._0079_Word_Search.notes;
         The maximum length of the call stack would be the length of the word.
         Therefore, the space complexity of the algorithm is O(L).
  */
-public class Backtracking_String {
+public class Backtracking {
     private char[][] board;
     private int ROWS;
     private int COLS;
