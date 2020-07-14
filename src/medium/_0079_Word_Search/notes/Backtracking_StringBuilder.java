@@ -29,7 +29,7 @@ public class Backtracking_StringBuilder {
 
         for (int r = 0; r < ROWS; r++) {
             for (int c = 0; c < COLS; c++) {
-                if (backtrack(r, c, 0, word, new StringBuilder())) {
+                if (backtrack(r, c, 0, word)) {
                     return true;
                 }
             }
@@ -38,7 +38,7 @@ public class Backtracking_StringBuilder {
         return false;
     }
 
-    public boolean backtrack(int row, int col, int index, String word, StringBuilder sb) {
+    public boolean backtrack(int row, int col, int index, String word) {
         /* Step 1 - check the bottom case */
         if (index >= word.length()) {
             return true;
@@ -58,11 +58,10 @@ public class Backtracking_StringBuilder {
             3.4 - Explore the neighbors in DFS               */
 
         boolean result = false;
-        sb.append(board[row][col]);
         board[row][col] = '#';
 
         for (int i = 0; i < rowOffsets.length; i++) {
-            result = backtrack(row + rowOffsets[i], col + colOffsets[i], index + 1, word, sb);
+            result = backtrack(row + rowOffsets[i], col + colOffsets[i], index + 1, word);
             /* Instead of returning directly once we find a match,
                we simply break out of the loop and do the cleanup before returning  */
             if (result) {
@@ -71,9 +70,7 @@ public class Backtracking_StringBuilder {
         }
 
         /* Step 4 - clean up and return the result */
-        char c = sb.charAt(index);
-        sb.delete(sb.length() - 1, sb.length());
-        board[row][col] = c;
+        board[row][col] = word.charAt(index);
 
         return result;
     }
