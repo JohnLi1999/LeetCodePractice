@@ -52,15 +52,17 @@ public class Solution_BacktrackingWithTrie {
 
         // Append the current char into temp result
         temp.append(board[row][col]);
-        board[row][col] = '#';
+
 
         // Return if the current string does not match any prefix in the trie
         if (!trie.startsWith(temp.toString())) {
-            // Clean up the board and temp result
-            board[row][col] = temp.charAt(temp.length() - 1);
+            // Clean up temp result
             temp.delete(temp.length() - 1, temp.length());
             return;
         }
+
+        // Mark the current cell as used
+        board[row][col] = '#';
 
         // Add matched words and avoid duplicates
         if (trie.search(temp.toString()) && !results.contains(temp.toString())) {
