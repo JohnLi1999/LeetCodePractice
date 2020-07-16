@@ -4,8 +4,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 /*  https://leetcode.com/problems/word-search-ii/
-    Time complexity: O( M(4⋅3^{L−1}) )
-        Where M is the number of cells in the board and L is the maximum length of words.
+    Time complexity: O( N ⋅ M ⋅ 4⋅3^{L−1} )
+        Where N is the number of words to be searched,
+        M is the number of cells in the board, and L is the maximum length of words.
         To see more explanation, please check "0212. Word Search II.png"
     Space Complexity: O(N)
         Where N is the total number of letters in the dictionary.
