@@ -6,7 +6,7 @@ import java.util.Deque;
 public class MyQueue {
     /*  https://leetcode.com/problems/implement-queue-using-stacks/ */
 
-    /* A Better Solution */
+    /* A Better Solution_PureBacktracking */
     private Deque<Integer> s1;
     private Deque<Integer> s2;
     private Integer front;

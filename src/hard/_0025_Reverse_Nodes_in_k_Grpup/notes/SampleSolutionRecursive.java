@@ -3,7 +3,7 @@ package hard._0025_Reverse_Nodes_in_k_Grpup.notes;
 import utils.list_node.ListNode;
 
 public class SampleSolutionRecursive {
-    /** Sample Solution. Need to review in the future. */
+    /** Sample Solution_PureBacktracking. Need to review in the future. */
     /*  Time Complexity: O(N)
             Since we process each node exactly twice.
             Once when we are counting the number of nodes in each recursive call,

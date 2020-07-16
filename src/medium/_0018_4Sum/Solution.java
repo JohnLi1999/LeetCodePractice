@@ -22,7 +22,7 @@ public class Solution {
         List<List<Integer>> result = new ArrayList<>();
         // Helper List that contains temporal results
         List<Integer> tempResult = new ArrayList<>();
-        // Generalized Solution for k-Sum questions
+        // Generalized Solution_PureBacktracking for k-Sum questions
         kSum(nums, 0, target, 4, tempResult, result); // k = 4 for Four Sum
         return result;
     }

@@ -9,7 +9,7 @@ public class Solution {
             O(n^2) in the worst case
         Space complexity: O(1)
      */
-    /** Sample Solution. Need to review in the future. Check notes folder for more details */
+    /** Sample Solution_PureBacktracking. Need to review in the future. Check notes folder for more details */
     public static int findKthLargest_QuickSelect(int[] nums, int k) {
         int size = nums.length;
         // kth largest is (N - k)th smallest
