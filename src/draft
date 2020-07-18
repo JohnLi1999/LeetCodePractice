@@ -1,34 +1,17 @@
-public static boolean exist(char[][] board, String word) {
-    return false;
-}
+public static int[] countBits(int num) {
+    int[] result = new int[num + 1];
 
-private List<Pos> adjacentElements(Pos pos, boolean[][] used) {
-    List<Pos> list = new ArrayList<>();
+    for (int i = 0; i <= num; i++) {
+        int count = 0;
+        int x = i;
 
-    for (int i = pos.x - 1; i <= pos.x + 1 ; i++) {
-        for (int j = pos.y - 1; j <= pos.y + 1; j++) {
-            if (i < 0 || i >= used.length ||
-                j < 0 || j >= used[i].length ||
-                (i == pos.x && j == pos.y) || used[i][j] ) {
-                list.add(new Pos(i, j));
-            }
+        while (x != 0) {
+            count++;
+            x &= (x - 1);
         }
+
+        result[i] = count;
     }
 
-    return list;
-}
-
-private class Pos {
-    public int x;
-    public int y;
-
-    public Pos(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    @Override
-    public String toString() {
-        return "[" + x + ", " + y + "]";
-    }
+    return result;
 }
