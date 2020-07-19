@@ -64,19 +64,19 @@ public class Solution_Bitwise {
         while (free_cols > 0) {
             /*  x & (-x) is the bitwise operation to get the rightmost bit-1
                 In this step, we use it to get the next free column  */
-            int next_col = free_cols & (-free_cols);
+            int next_free_col = free_cols & (-free_cols);
 
             // Backtrack for the next row
             backtrack(
                     n,
                     row + 1,
-                    cols | next_col, // Mark next_col as not allowed in cols
-                    /*  Mark next_col as not allowed in diagonals.
+                    cols | next_free_col, // Mark next_free_col as not allowed in cols
+                    /*  Mark next_free_col as not allowed in diagonals.
                         Shift one bit to the right since it matches the direction for the diagonal  */
-                    (diagonals | next_col) >> 1,
-                    /*  Mark next_col as not allowed in anti-diagonals.
+                    (diagonals | next_free_col) >> 1,
+                    /*  Mark next_free_col as not allowed in anti-diagonals.
                         Shift one bit to the left since it matches the direction for the anti-diagonal  */
-                    (anti_diagonals | next_col) << 1
+                    (anti_diagonals | next_free_col) << 1
             );
 
             /*  Here we return back from the last recursion.
