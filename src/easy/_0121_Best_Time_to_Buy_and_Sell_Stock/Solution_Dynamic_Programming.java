@@ -2,12 +2,33 @@ package easy._0121_Best_Time_to_Buy_and_Sell_Stock;
 
 public class Solution_Dynamic_Programming {
     /*  Time complexity: O(n)
+        Only a single pass is needed.
+    Space complexity: O(1)
+        The space used by held and hold.
+ */
+    public static int maxProfit(int[] prices) {
+        if (prices.length < 2) {
+            return 0;
+        }
+
+        int held = -prices[0];
+        int sold = 0;
+
+        for (int price : prices) {
+            sold = Math.max(sold, held + price);
+            held = Math.max(held, -price);
+        }
+
+        return sold;
+    }
+
+    /*  Time complexity: O(n)
             Only a single pass is needed.
         Space complexity: O(n)
             The size of 2-D array we use to store profits is n * 3.
             So the space complexity is O(3 * n) = O(n).
      */
-    public static int maxProfit(int[] prices) {
+    public static int maxProfit_With_Extra_Space(int[] prices) {
         if (prices.length < 2) {
             return 0;
         }
