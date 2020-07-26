@@ -95,6 +95,7 @@
 - `static void  sort(Object[] a)`
 - `static void  sort(int[] a)`
 - `static <T> void  sort​(T[] a, Comparator<? super T> c)`
+- `static void  fill​(int[] a, int val)`
     
 ## Integer
 - `Integer.MAX_VALUE` = 2<sup>31</sup>-1 = 2147483647
