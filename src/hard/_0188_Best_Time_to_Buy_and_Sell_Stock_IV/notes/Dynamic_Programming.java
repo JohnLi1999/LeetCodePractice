@@ -59,5 +59,28 @@ public class Dynamic_Programming {
         }
 
         return res;
+
+//        /*  My Way  */
+//        int[][][] profits = new int[length][k+1][2];
+//        for (int i = 0; i < length; i++) {
+//            for (int j = 0; j < k; j++) {
+//                profits[i][j][1] = -prices[0];
+//            }
+//        }
+//
+//        for (int i = 1; i < length; i++) {
+//            for (int j = 0; j <= k; j++) {
+//                if (j > 0) {
+//                    profits[i][j][0] = Math.max(profits[i - 1][j][0], profits[i - 1][j - 1][1] + prices[i]);
+//                }
+//                profits[i][j][1] = Math.max(profits[i - 1][j][1], profits[i - 1][j][0] - prices[i]);
+//            }
+//        }
+//
+//        int maxProfit = 0;
+//        for (int i = 0; i < length; i++) {
+//            maxProfit = Math.max(maxProfit, profits[i][k][0]);
+//        }
+//        return maxProfit;
     }
 }
