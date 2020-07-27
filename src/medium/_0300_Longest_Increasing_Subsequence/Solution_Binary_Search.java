@@ -25,7 +25,7 @@ public class Solution_Binary_Search {
         return LIS.size();
     }
 
-    private static int binarySearch(List<Integer> list, int num) {
+    private int binarySearch(List<Integer> list, int num) {
         if (list.size() == 0) {
             return 0;
         }
