@@ -30,21 +30,19 @@ public class Solution_Binary_Search {
             return 0;
         }
 
-        int left = 0;
-        int right = list.size() - 1;
+        int low = 0;
+        int high = list.size() - 1;
 
-        while (left <= right) {
-            int middle = (left + right) / 2;
+        while (low <= high) {
+            int middle = (low + high) / 2;
 
-            if (num == list.get(middle)) {
-                return middle;
-            } else if (num > list.get(middle)) {
-                left = middle + 1;
+            if (num <= list.get(middle)) {
+                high = middle - 1;
             } else {
-                right = middle - 1;
+                low = middle + 1;
             }
         }
 
-        return right + 1;
+        return low;
     }
 }
