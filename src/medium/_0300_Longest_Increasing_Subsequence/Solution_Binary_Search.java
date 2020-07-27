@@ -30,14 +30,6 @@ public class Solution_Binary_Search {
             return 0;
         }
 
-        if (num < list.get(0)) {
-            return 0;
-        }
-
-        if (num > list.get(list.size() - 1)) {
-            return list.size();
-        }
-
         int left = 0;
         int right = list.size() - 1;
 
