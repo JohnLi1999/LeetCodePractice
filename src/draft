@@ -1,22 +1,27 @@
-public int maxProduct(int[] nums) {
-    int max = Integer.MIN_VALUE;
+public int lengthOfLIS(int[] nums) {
+    int maxLen = 0;
 
     for (int i = 0; i < nums.length; i++) {
-        for (int j = i; j < nums.length; j++) {
-            int product = getProduct(nums, i, j);
-            if (product > max) {
-                max = product;
+        if (maxLen >= (nums.length - i)) {
+             break;
+        }
+
+        int curr = nums[i];
+        int len = 1;
+
+        for (int j = i + 1; j < nums.length; j++) {
+            if (j == nums.length - 1 && nums[j] > curr) {
+                len++;
+            } else if (nums[j] > curr && nums[j] < nums[j + 1]) {
+                len++;
+                curr = nums[j];
             }
+        }
+
+        if (len > maxLen) {
+            maxLen = len;
         }
     }
 
-    return max;
-}
-
-private int getProduct(int[] nums, int start, int end) {
-    int result = 1;
-    for (int i = start; i <= end; i++) {
-        result *= nums[i];
-    }
-    return result;
+    return maxLen;
 }
