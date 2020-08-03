@@ -2,10 +2,10 @@ package hard._0072_Edit_Distance;
 
 public class Solution_Dynamic_Programming_1_D_Array {
     /*  https://leetcode.com/problems/edit-distance/
-        Time Complexity: O(M * N)
-            Where M, N are the lengths of word1 and word2 respectively
-        Space Complexity: O(N)
-            We need to fill the dp array which has size N
+        Time complexity: O(M⋅N)
+            We're solving M⋅N sub-problems. Solving each sub-problem is an O(1) operation.
+        Space complexity: O(N)
+            We'e allocating an 1-D array of size N
      */
     public int minDistance(String word1, String word2) {
         int[] dp = new int[word2.length() + 1];

@@ -8,10 +8,14 @@ public class Solution_Memoization {
     int[][] dp;
 
     /*  https://leetcode.com/problems/edit-distance/
-        Time Complexity: O(M * N)
-            Where M, N are the lengths of word1 and word2 respectively
-        Space Complexity: O(M * N)
-            We need to fill the dp array which has size M * N
+        Time complexity: O(M⋅N)
+            There are M possible positions for the first string, and N for the second string.
+            Therefore, this gives us M⋅N possible pairs of integers,
+            and is the number of sub-problems to be solved.
+            Solving each sub-problem has a cost of O(1), so we get a total time complexity of O(M⋅N).
+        Space complexity: O(M⋅N).
+            We need to store the answer for each of the M⋅N sub-problems.
+            Each sub-problem takes O(1) space to store. This gives us a total of O(M⋅N).
      */
     public int minDistance(String word1, String word2) {
         this.word1 = word1;
