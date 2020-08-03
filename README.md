@@ -80,6 +80,7 @@
 ## String
 - `int length()`
 - `char charAt(int index)` 
+- `int codePointAt​(int index)`
 
 ## StringBuilder
 - `StringBuilder append​(String str)`
