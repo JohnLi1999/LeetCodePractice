@@ -1,0 +1,27 @@
+package hard._0072_Edit_Distance;
+
+public class Solution_Dynamic_Programming_Bottom_Up {
+    /*  https://leetcode.com/problems/edit-distance/
+        Time Complexity: O(M * N)
+            Where M, N are the lengths of word1 and word2 respectively
+        Space Complexity: O(M * N)
+            We need to fill the dp array which has size M * N
+     */
+    public int minDistance(String word1, String word2) {
+        int[][] dp = new int[word1.length() + 1][word2.length() + 1];
+
+        for (int i = 0; i <= word1.length(); i++) {
+            for (int j = 0; j <= word2.length(); j++) {
+                if (i == 0 || j == 0) {
+                    dp[i][j] = i + j;
+                } else if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else {
+                    dp[i][j] = 1 + Math.min(dp[i - 1][j - 1], Math.min(dp[i - 1][j], dp[i][j - 1]));
+                }
+            }
+        }
+
+        return dp[word1.length()][word2.length()];
+    }
+}
