@@ -1,6 +1,6 @@
 package easy._0111_Minimum_Depth_of_Binary_Tree.notes;
 
-import utils.pair.Pair;
+import utils.pair_node.Pair;
 import utils.tree_node.TreeNode;
 
 import java.util.LinkedList;
