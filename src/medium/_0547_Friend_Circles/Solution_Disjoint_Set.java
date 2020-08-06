@@ -1,6 +1,6 @@
 package medium._0547_Friend_Circles;
 
-public class Solution {
+public class Solution_Disjoint_Set {
     /*  https://leetcode.com/problems/friend-circles/
         Time complexity: O(N^2)
             We traverse over the complete matrix once.
