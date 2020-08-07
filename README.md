@@ -28,6 +28,7 @@
 ## Deque
 - `boolean isEmpty()`
 - `int size()`
+- `boolean contains​(Object o)`
 
 ### Summary of Deque Methods
 |         | First Element (Head) | First Element (Head) | Last Element (Tail) | Last Element (Tail) |
@@ -68,7 +69,6 @@
 - `E poll()`
 - `boolean contains​(Object o)`
 - `int size()`
-
 
 ## Set
 - `boolean add(E e)`
