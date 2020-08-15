@@ -64,6 +64,7 @@
 ## PriorityQueue (Min-Heap by default)
 - `PriorityQueue​(Collection<? extends E> c)`
 - `boolean add​(E e)`
+- `E remove()`
 - `boolean offer​(E e)`
 - `E peek()`
 - `E poll()`
