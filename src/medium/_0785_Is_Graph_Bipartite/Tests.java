@@ -1,4 +1,4 @@
-package medium._0718_Is_Graph_Bipartite;
+package medium._0785_Is_Graph_Bipartite;
 
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
