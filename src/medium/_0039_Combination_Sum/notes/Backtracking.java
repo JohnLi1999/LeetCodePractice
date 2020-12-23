@@ -1,4 +1,4 @@
-package medium._0039._Combination_Sum.notes;
+package medium._0039_Combination_Sum.notes;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
