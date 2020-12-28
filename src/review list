@@ -16,6 +16,7 @@ DFS
     0212 - Word Search II - use Trie properly
 Binary Search
     0069 - Sqrt (avoid overflow + 4 solutions + double result)
+    0033 - Rotated sorted array
 DP
     0152 - Handle 0 and negative values properly
     0121, 0122, 0123, 0188, 0309, 0714 - Best Time to Buy and Sell Stock series
