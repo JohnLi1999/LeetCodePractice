@@ -77,6 +77,7 @@
 - `boolean contains(Object o)`
 - `boolean isEmpty()`
 - `boolean remove(Object o)`
+- `void	clear()`
 - `static <E> Set<E>  of(E e1, E e2, E e3)`
 
 ## String
