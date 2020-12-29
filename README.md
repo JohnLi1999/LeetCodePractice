@@ -15,6 +15,7 @@
     
 ## List
 - `E get​(int index)`
+- `void	add​(int index, E element)`
 - `boolean add(E e)`
 - `boolean addAll(Collection<? extends E> c)`
 - `boolean contains(Object o)`
@@ -115,3 +116,6 @@
 - `char charValue()`
 - `static int  getNumericValue​(char ch)`
 
+## Comparator
+- `static <T> Comparator<T>	 comparingInt​(ToIntFunction<? super T> keyExtractor)`
+    - e.g. `Arrays.sort(intervals, Comparator.comparingInt(o -> o[0]));`
