@@ -15,7 +15,13 @@ class ListNodeTest {
 
     @Test
     void testArrayToListNode() {
-        ListNode.printList(new ListNode().arrayToListNodes(new int[] {3, 4, 2})); // 2 -> 4 -> 3
-        ListNode.printList(new ListNode().arrayToListNodes(new int[] {1, 9, 8})); // 8 -> 9 -> 1
+        ListNode.printList(new ListNode().arrayToListNodes(new int[] {3, 4, 2})); // 3 -> 4 -> 2
+        ListNode.printList(new ListNode().arrayToListNodes(new int[] {1, 9, 8})); // 1 -> 9 -> 8
+    }
+
+    @Test
+    void testArrayToListNodeReverse() {
+        ListNode.printList(new ListNode().arrayToListNodesReverse(new int[] {3, 4, 2})); // 2 -> 4 -> 3
+        ListNode.printList(new ListNode().arrayToListNodesReverse(new int[] {1, 9, 8})); // 8 -> 9 -> 1
     }
 }

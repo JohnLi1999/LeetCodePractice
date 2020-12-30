@@ -19,6 +19,18 @@ public class ListNode {
 
     // Helper functions
     public ListNode arrayToListNodes(int[] arr) {
+        ListNode listNode = new ListNode(arr[0]);
+        ListNode currentNode = listNode;
+
+        for (int i = 1; i < arr.length; i++) {
+            currentNode.next = new ListNode(arr[i]);
+            currentNode = currentNode.next;
+        }
+
+        return listNode;
+    }
+
+    public ListNode arrayToListNodesReverse(int[] arr) {
         ListNode listNode = new ListNode(arr[arr.length - 1]);
         ListNode currentNode = listNode;
 
