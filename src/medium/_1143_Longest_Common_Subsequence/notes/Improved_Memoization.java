@@ -36,7 +36,7 @@ public class Improved_Memoization {
             return memo[p1][p2];
         }
 
-        // Recursive cases.
+        // Sample_Solution cases.
         int answer = 0;
         if (text1.charAt(p1) == text2.charAt(p2)) {
             answer = 1 + memoSolve(p1 + 1, p2 + 1);
