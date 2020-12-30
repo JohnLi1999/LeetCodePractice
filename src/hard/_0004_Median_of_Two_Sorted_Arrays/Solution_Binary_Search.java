@@ -85,15 +85,15 @@ public class Solution_Binary_Search {
                     That is the number of immediately after leftMax */
 
                 if (aCount == aLen) {
-                    /*  If array a has contributed all its value,
+                    /*  If array a has contributed all its values,
                         then rightMin is the corresponding value in array b */
                     rightMin = b[bCount];
                 } else if (bCount == bLen) {
-                    /*  If array b has contributed all its value,
+                    /*  If array b has contributed all its values,
                         then rightMin is the corresponding value in array a */
                     rightMin = a[aCount];
                 } else {
-                    /*  If none of the array has contributed all its value,
+                    /*  If none of the array has contributed all its values,
                         then rightMin is the smaller between between a' and b' */
                     rightMin = Math.min(a[aCount], b[bCount]);
                 }
