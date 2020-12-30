@@ -1,5 +1,7 @@
 package utils.list_node;
 
+import java.util.Objects;
+
 /** Definition for singly-linked list. */
 public class ListNode {
 
@@ -19,6 +21,10 @@ public class ListNode {
 
     // Helper functions
     public ListNode arrayToListNodes(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            return null;
+        }
+
         ListNode listNode = new ListNode(arr[0]);
         ListNode currentNode = listNode;
 
@@ -31,6 +37,10 @@ public class ListNode {
     }
 
     public ListNode arrayToListNodesReverse(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            return null;
+        }
+
         ListNode listNode = new ListNode(arr[arr.length - 1]);
         ListNode currentNode = listNode;
 
@@ -49,5 +59,19 @@ public class ListNode {
         }
         System.out.print(listNode.val + " -> ");
         printList(listNode.next);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ListNode listNode = (ListNode) o;
+        return val == listNode.val &&
+                Objects.equals(next, listNode.next);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(val, next);
     }
 }
