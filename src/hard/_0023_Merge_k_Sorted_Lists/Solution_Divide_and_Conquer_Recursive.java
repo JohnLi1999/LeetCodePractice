@@ -7,7 +7,7 @@ import utils.list_node.ListNode;
     Space complexity: O(1)
         No extra space is used
  */
-public class Solution_Divide_and_Conquer {
+public class Solution_Divide_and_Conquer_Recursive {
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0) {
             return null;

@@ -10,7 +10,8 @@ class Tests {
 
     Solution_My_Way_Slow_Priority_Queue solutionMyWay = new Solution_My_Way_Slow_Priority_Queue();
     Solution_Better_Fast_Priority_Queue solution_betterFastPriorityQueue = new Solution_Better_Fast_Priority_Queue();
-    Solution_Divide_and_Conquer solution_divide_and_conquer = new Solution_Divide_and_Conquer();
+    Solution_Divide_and_Conquer_Recursive solution_divide_and_conquerRecursive = new Solution_Divide_and_Conquer_Recursive();
+    Solution_Divide_and_Conquer_Iterative solution_divide_and_conquer_iterative = new Solution_Divide_and_Conquer_Iterative();
 
     ListNode[] createLists(int[][] matrix) {
         ListNode[] lists = new ListNode[matrix.length];
@@ -87,7 +88,7 @@ class Tests {
     }
 
     @Nested
-    class Divide_and_Conquer {
+    class Divide_and_Conquer_Recursive {
         @Test
         void test1() {
             int[][] matrix = {
@@ -97,7 +98,7 @@ class Tests {
             };
             ListNode[] lists = createLists(matrix);
             ListNode expected = new ListNode().arrayToListNodes(new int[] { 1, 1, 2, 3, 4, 4, 5, 6 });
-            assertEquals(expected, solution_divide_and_conquer.mergeKLists(lists));
+            assertEquals(expected, solution_divide_and_conquerRecursive.mergeKLists(lists));
         }
 
         @Test
@@ -105,7 +106,7 @@ class Tests {
             int[][] matrix = {};
             ListNode[] lists = createLists(matrix);
             ListNode expected = new ListNode().arrayToListNodes(new int[] {});
-            assertEquals(expected, solution_divide_and_conquer.mergeKLists(lists));
+            assertEquals(expected, solution_divide_and_conquerRecursive.mergeKLists(lists));
         }
 
         @Test
@@ -113,7 +114,38 @@ class Tests {
             int[][] matrix = { {} };
             ListNode[] lists = createLists(matrix);
             ListNode expected = new ListNode().arrayToListNodes(new int[] {});
-            assertEquals(expected, solution_divide_and_conquer.mergeKLists(lists));
+            assertEquals(expected, solution_divide_and_conquerRecursive.mergeKLists(lists));
+        }
+    }
+
+    @Nested
+    class Divide_and_Conquer_Iterative {
+        @Test
+        void test1() {
+            int[][] matrix = {
+                    { 1, 4, 5 },
+                    { 1, 3, 4 },
+                    { 2, 6 }
+            };
+            ListNode[] lists = createLists(matrix);
+            ListNode expected = new ListNode().arrayToListNodes(new int[] { 1, 1, 2, 3, 4, 4, 5, 6 });
+            assertEquals(expected, solution_divide_and_conquer_iterative.mergeKLists(lists));
+        }
+
+        @Test
+        void test2() {
+            int[][] matrix = {};
+            ListNode[] lists = createLists(matrix);
+            ListNode expected = new ListNode().arrayToListNodes(new int[] {});
+            assertEquals(expected, solution_divide_and_conquer_iterative.mergeKLists(lists));
+        }
+
+        @Test
+        void test3() {
+            int[][] matrix = { {} };
+            ListNode[] lists = createLists(matrix);
+            ListNode expected = new ListNode().arrayToListNodes(new int[] {});
+            assertEquals(expected, solution_divide_and_conquer_iterative.mergeKLists(lists));
         }
     }
 }
