@@ -4,6 +4,15 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedList;
 
+/*  https://leetcode.com/problems/basic-calculator-iii/
+    Time complexity: O(n), where n is the number of characters in the input string
+        In preparation stage, we traverse the string once, and it takes O(n) time
+        Then we traverse the queue, it also takes O(n) time.
+        So the overall time complexity is O(n)
+    Space complexity: O(n)
+        For the worst case, we save (n-1) characters into the queue.
+        So the space complexity is O(n)
+ */
 public class Solution_Queue_Stack_Recursion {
     private final Deque<Character> queue = new LinkedList<>();
 

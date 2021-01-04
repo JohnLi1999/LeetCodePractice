@@ -5,7 +5,7 @@ package hard._0772_Basic_Calculator_III;
         findInnermostParentheses takes O(n) time
         getValue takes O(n^2) time
         => removeParentheses takes O(n^3) time
-    Space complexity: n^3
+    Space complexity: O(n^3)
         findInnermostParentheses takes O(n) space
         getValue takes O(n^2) space
         => removeParentheses takes O(n^3) space
