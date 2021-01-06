@@ -17,7 +17,7 @@ public class Backtracking {
         int starIdx = -1, sTmpIdx = -1;
 
         while (sIdx < sLen) {
-            // If the pattern caracter = string character
+            // If the pattern character = string character
             // or pattern character = '?'
             if (pIdx < pLen && (p.charAt(pIdx) == '?' || p.charAt(pIdx) == s.charAt(sIdx))){
                 ++sIdx;
