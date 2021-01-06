@@ -6,7 +6,7 @@ public class Solution {
             Where n is the length of the prices sequence
         Space Complexity: O(n^2)
             Where n is the length of the prices sequence
-            The size of the DP array is n * n/2 * 2 * 2 = 2n^2,
+            The size of the DP_Bottom_Up array is n * n/2 * 2 * 2 = 2n^2,
             so the space complexity is O(n^2)
      */
     public int maxProfit(int[] prices) {

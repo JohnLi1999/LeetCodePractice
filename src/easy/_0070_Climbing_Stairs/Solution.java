@@ -5,7 +5,7 @@ public class Solution {
         Time complexity: O(n)
             Single loop upto n.
         Space complexity: O(n)
-            DP array of size n is used.
+            DP_Bottom_Up array of size n is used.
      */
     public static int climbStairs_Dynamic_Programming(int n) {
         if (n < 3) {

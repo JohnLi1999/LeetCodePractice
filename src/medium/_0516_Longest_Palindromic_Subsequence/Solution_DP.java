@@ -67,7 +67,7 @@ public class Solution_DP {
                     f(n, m) = 1 + f(n - 1, m - 1)
                 if s1(n) != s2(m)
                     f(n, m) = max(f(n - 1, m), f(n, m - 1))
-            DP array:
+            DP_Bottom_Up array:
                 ...  0   ... m-1 m   ... ]
                 0   [0   ... ... ... 0   ]
                 ... [0   ... ... ... ... ]

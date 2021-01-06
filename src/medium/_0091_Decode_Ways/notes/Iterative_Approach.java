@@ -4,7 +4,7 @@ package medium._0091_Decode_Ways.notes;
         Where N is length of the string.
         We iterate the length of dp array which is N+1.
     Space Complexity: O(N)
-        The length of the DP array.
+        The length of the DP_Bottom_Up array.
  */
 public class Iterative_Approach {
     public int numDecodings(String s) {
@@ -13,7 +13,7 @@ public class Iterative_Approach {
             return 0;
         }
 
-        // DP array to store the subproblem results
+        // DP_Bottom_Up array to store the subproblem results
         int[] dp = new int[s.length() + 1];
         dp[0] = 1;
         // Ways to decode a string of size 1 is 1. Unless the string is '0'.

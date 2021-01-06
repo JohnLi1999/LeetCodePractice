@@ -12,13 +12,13 @@ public class Solution {
             return 0;
         }
 
-        /*  DP State:
+        /*  DP_Bottom_Up State:
                 profit[i][j][k]
                 i (0 -> I): the number of days
                 j (0 -> 2): the maximum number (2 in this question) of transactions can be completed
                 k (0 or 1): 0 represents no stock is hold
                             1 represents now hold one stock
-            DP Equations:
+            DP_Bottom_Up Equations:
                 profit[i][0][0] = profit[i - 1][0][0];
                 profit[i][0][1] = Max(profit[i - 1][0][1],              // No Action
                                       profit[i - 1][0][0] - prices[i])  // Buy stock at day i

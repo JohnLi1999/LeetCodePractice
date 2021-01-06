@@ -6,7 +6,7 @@ public class Solution_LCS_Dynamic_Programming {
             We need to fill in the dp array of size O(m), n times.
             Here, n and m refer to the lengths of s1 and s2.
         Space complexity : O(m).
-            DP array of size O(m) is used.
+            DP_Bottom_Up array of size O(m) is used.
      */
     public int minDistance(String word1, String word2) {
         int[] dp = new int[word2.length() + 1];

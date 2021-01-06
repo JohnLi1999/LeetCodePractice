@@ -4,7 +4,7 @@ package medium._0583_Delete_Operation_for_Two_Strings.notes;
         We need to fill in the dp array of size n, m times.
         Here, m and n refer to the lengths of s1 and s2.
     Space complexity: O(n)
-        DP array of size n is used.
+        DP_Bottom_Up array of size n is used.
  */
 public class Without_Using_LCS_1_D_Dynamic_Programming {
     public int minDistance(String s1, String s2) {

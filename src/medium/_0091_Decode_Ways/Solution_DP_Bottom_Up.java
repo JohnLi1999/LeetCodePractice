@@ -5,7 +5,7 @@ package medium._0091_Decode_Ways;
         Where N is length of the string.
         We iterate the length of dp array which is N+1.
     Space Complexity:
-        Normal: O(N) - We use an DP array, and O(N) is the length of the DP array.
+        Normal: O(N) - We use an DP_Bottom_Up array, and O(N) is the length of the DP_Bottom_Up array.
         Optimized: O(1) - We only use three variables instead of an array
  */
 public class Solution_DP_Bottom_Up {

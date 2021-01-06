@@ -22,7 +22,7 @@ public class Solution_DP {
         /*  Ideas
                 1.  dp[i] will save the largest number of intervals that
                     do not overlap for the first i elements (including i)
-                2.  DP state transition function
+                2.  DP_Bottom_Up state transition function
                     dp[i] = max(dp[i - 1], maxOf(dp[j]) + 1), where 0 <= j < i
          */
 

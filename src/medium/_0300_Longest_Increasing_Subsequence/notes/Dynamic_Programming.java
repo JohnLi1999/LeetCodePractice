@@ -3,7 +3,7 @@ package medium._0300_Longest_Increasing_Subsequence.notes;
 /*  Time complexity: O(n^2)
         Two loops of n are there.
     Space complexity: O(n)
-        DP array of size n is used.
+        DP_Bottom_Up array of size n is used.
  */
 public class Dynamic_Programming {
     public int lengthOfLIS(int[] nums) {

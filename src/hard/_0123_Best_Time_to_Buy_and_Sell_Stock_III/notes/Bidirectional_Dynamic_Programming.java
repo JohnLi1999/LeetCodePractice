@@ -14,10 +14,10 @@ public class Bidirectional_Dynamic_Programming {
         int rightMax = prices[length - 1];
 
         int[] leftProfits = new int[length];
-        // pad the right DP array with an additional zero for convenience.
+        // pad the right DP_Bottom_Up array with an additional zero for convenience.
         int[] rightProfits = new int[length + 1];
 
-        // construct the bidirectional DP array
+        // construct the bidirectional DP_Bottom_Up array
         for (int l = 1; l < length; ++l) {
             leftProfits[l] = Math.max(leftProfits[l - 1], prices[l] - leftMin);
             leftMin = Math.min(leftMin, prices[l]);

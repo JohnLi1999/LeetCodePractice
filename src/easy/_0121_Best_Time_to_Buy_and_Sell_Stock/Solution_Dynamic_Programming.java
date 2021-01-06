@@ -35,7 +35,7 @@ public class Solution_Dynamic_Programming {
 
         int result = 0;
 
-        // DP Array
+        // DP_Bottom_Up Array
         int[][] profit = new int[prices.length][3];
         /*  profit[i][0] represents the overall profit that we neither buy or sell a stock on day i
             profit[i][1] represents the overall profit that we sell a stock on day i

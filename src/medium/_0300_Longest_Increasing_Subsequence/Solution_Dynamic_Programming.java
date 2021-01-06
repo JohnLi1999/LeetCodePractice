@@ -7,7 +7,7 @@ public class Solution_Dynamic_Programming {
         Time Complexity: O(n^2)
             We used two nested loops
         Space Complexity: O(1)
-            DP array of size n is used
+            DP_Bottom_Up array of size n is used
      */
     public int lengthOfLIS(int[] nums) {
         if (nums.length == 0) {

@@ -34,7 +34,7 @@ public class Solution {
             return profit;
         }
 
-        /*  We initialize two DP arrays
+        /*  We initialize two DP_Bottom_Up arrays
             One to track the profits of buying a stock and
             the other to track the profits of selling a stock
          */
@@ -45,7 +45,7 @@ public class Solution {
 
         for (int price : prices) {
             for (int i = 0; i < buy.length; i++) {
-                // DP transition equations
+                // DP_Bottom_Up transition equations
                 if (i == 0) {
                     buy[0] = Math.max(buy[0], -price);
                 } else {
