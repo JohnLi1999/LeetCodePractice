@@ -109,6 +109,12 @@
 
 ## Collections
 - `static <T> Comparator<T>  reverseOrder()`
+- `static <T extends Object & Comparable<? super T>> T 
+    max​(Collection<? extends T> coll)	`
+    - Returns the maximum element of the given collection, according to the natural ordering of its elements.
+- `static <T extends Object & Comparable<? super T>> T  
+    min​(Collection<? extends T> coll)	`
+    - Returns the minimum element of the given collection, according to the natural ordering of its elements.
 
 ## MATH
 - `static int  abs(int a)`
@@ -120,3 +126,9 @@
 ## Comparator
 - `static <T> Comparator<T>	 comparingInt​(ToIntFunction<? super T> keyExtractor)`
     - e.g. `Arrays.sort(intervals, Comparator.comparingInt(o -> o[0]));`
+    
+## TreeMap
+-  `TreeMap​(Comparator<? super K> comparator)`
+    - Constructs a new, empty tree map, ordered according to the given comparator.
+- `K firstKey()`
+    - Returns the first (lowest) key currently in this map.
