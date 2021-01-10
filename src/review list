@@ -14,6 +14,8 @@ DFS
     0036 && 0037 - Sudoku (box index)
     0079 - Word Search - (handle offsets)
     0212 - Word Search II - use Trie properly
+BFS
+    0407 - How to approach the problem in a different way
 Binary Search
     0069 - Sqrt (avoid overflow + 4 solutions + double result)
     0033 - Rotated sorted array
@@ -30,5 +32,3 @@ Slide Window
     0003 - Properly use slide window method
 String Manipulation
     0336 - How to find a proper data structure or method to check combined palindromes
-Other
-    0407 - How to approach the problem in a different way
