@@ -20,7 +20,7 @@ public class ListNode {
     }
 
     // Helper functions
-    public ListNode arrayToListNodes(int[] arr) {
+    public static ListNode arrayToListNodes(int[] arr) {
         if (arr == null || arr.length == 0) {
             return null;
         }
@@ -36,7 +36,7 @@ public class ListNode {
         return listNode;
     }
 
-    public ListNode arrayToListNodesReverse(int[] arr) {
+    public static ListNode arrayToListNodesReverse(int[] arr) {
         if (arr == null || arr.length == 0) {
             return null;
         }
