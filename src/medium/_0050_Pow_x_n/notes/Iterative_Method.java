@@ -25,6 +25,7 @@ public class Iterative_Method {
                 also know divide a number by 2 is remove the last bit in its binary version.
                 (e.g. (11 / 2 = 5) is equivalent to ('1011' removes last bit to '101'))
             Therefore, we will start with "result = 1, product = x".
+                The current product represents 3^(2^i) in the above example.
                 In each turn, we multiple product with itself ((x^{n/2})^2 = x^n),
                 then we check if n is odd or even,
                 if n is odd, we need to multiple result with product.
