@@ -38,6 +38,11 @@ public class Solution {
     private char[][] board;
     private boolean isSuccess = false;
 
+    /*  Time complexity: O(1)
+            Number of operations: (9!)^9
+                9! operations for onw row and we have 9 rows in total
+        Space complexity: O(1)
+     */
     public void solveSudoku(char[][] board) {
         this.board = board;
         init();

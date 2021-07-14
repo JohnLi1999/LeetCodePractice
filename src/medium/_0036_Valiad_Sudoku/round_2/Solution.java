@@ -38,6 +38,9 @@ public class Solution {
         System.out.println(s.isValidSudoku(board2));
     }
 
+    /*  Time complexity: O(1)
+        Space complexity: O(1)
+     */
     public boolean isValidSudoku(char[][] board) {
         List<Set<Character>> rows = new ArrayList<>();
         List<Set<Character>> cols = new ArrayList<>();

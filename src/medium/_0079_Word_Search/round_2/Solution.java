@@ -36,6 +36,11 @@ public class Solution {
     private final int[] rowOffsets = new int[] {-1, 0, 1, 0};
     private final int[] colOffsets = new int[] {0, 1, 0, -1};
 
+    /*  Time complexity: O((m * n) * 4^L)
+            m * n -> board size
+            L -> word length
+        Space complexity: O(m * n)
+     */
     public boolean exist(char[][] board, String word) {
         this.board = board;
         visited = new boolean[board.length][board[0].length];
