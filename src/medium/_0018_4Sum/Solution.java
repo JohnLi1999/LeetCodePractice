@@ -18,7 +18,7 @@ public class Solution {
     public static List<List<Integer>> fourSum(int[] nums, int target) {
         // Sort the array so that Two Pointers Strategy can be applied
         Arrays.sort(nums);
-        // Solution List
+        // Solution_PureBacktrack List
         List<List<Integer>> result = new ArrayList<>();
         // Helper List that contains temporal results
         List<Integer> tempResult = new ArrayList<>();
