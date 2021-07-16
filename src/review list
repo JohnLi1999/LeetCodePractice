@@ -1,3 +1,13 @@
+Round 2:
+    0235 && 0236 - Lowest Common Ancestor
+    0169 - Six different ways to find majority element
+    0212 - Word Search II - use Trie properly
+    0407 - How to approach the problem in a different way
+    0033 - Rotated sorted array
+    0004 - Another use of binary search
+    0152 - Handle 0 and negative values properly, two way traversal
+
+Round 1:
 Array
     0215 - Quick Sort
     0018 - kSum
@@ -21,7 +31,7 @@ Binary Search
     0033 - Rotated sorted array
     0004 - Another use of binary search
 DP
-    0152 - Handle 0 and negative values properly
+    0152 - Handle 0 and negative values properly, two way traversal
     0121, 0122, 0123, 0188, 0309, 0714 - Best Time to Buy and Sell Stock series
     0322 - Think this with climbing stairs
     1143*, 0583, 0712, 0072 - Longest Common Sequence series
