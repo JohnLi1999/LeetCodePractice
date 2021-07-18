@@ -10,25 +10,54 @@ public class Solution {
         System.out.println(s.maxProfit(new int[] {1})); // 0
     }
 
-    /*  Dynamic Programming
+    /*  Dynamic Programming - think 'buy' as positive values at the beginning
         Time complexity: O(n)
         Space complexity: O(1)
      */
     public int maxProfit(int[] prices) {
         int profit = 0;
-        int buy = Integer.MIN_VALUE;
+        int buy = Integer.MAX_VALUE;
 
-        /*  buy[i] = max(buy[i - 1], profit[i - 1] - price[i])
-            profit[i] = max(profit[i - 1], buy[i] + prices[i])
+        /*  buy[i] = min(buy[i - 1], price[i] - profit[i - 1])
+            profit[i] = max(profit[i - 1], prices[i] - buy[i])
+
+            Explanation:
+            1: buy is the lowest prices so far,
+                    but in this question, the buying price is a bit tricky,
+                    after we made some profit on some day, all the prices after that day
+                    will be the original price - the profit made so far
+            2: maximum profit is either
+                    the maximum profit achieved before or
+                    the current price - the current minimum buying price
          */
 
         for (int price : prices) {
-            buy = Math.max(buy, profit - price);
-            profit = Math.max(profit, buy + price);
+            buy = Math.min(buy, price - profit);
+            profit = Math.max(profit, price - buy);
         }
 
         return profit;
     }
+
+//    /*  Dynamic Programming - think 'buy' as negative values at the beginning
+//        Time complexity: O(n)
+//        Space complexity: O(1)
+//     */
+//    public int maxProfit(int[] prices) {
+//        int profit = 0;
+//        int buy = Integer.MIN_VALUE;
+//
+//        /*  buy[i] = max(buy[i - 1], profit[i - 1] - price[i])
+//            profit[i] = max(profit[i - 1], buy[i] + prices[i])
+//         */
+//
+//        for (int price : prices) {
+//            buy = Math.max(buy, profit - price);
+//            profit = Math.max(profit, buy + price);
+//        }
+//
+//        return profit;
+//    }
 
 //    /*  One pass
 //        Time complexity: O(n)
