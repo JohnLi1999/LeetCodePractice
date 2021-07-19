@@ -9,6 +9,11 @@ public class Solution {
         System.out.println(s.longestCommonSubsequence("abc", "def")); //0
     }
 
+    /*  Time complexity: O(m * n)
+            m -> length of word1
+            n -> length of word2
+        Space complexity: O(m * n)
+     */
     public int longestCommonSubsequence(String text1, String text2) {
         /*  if char a == char b
                 -> 1 + lcs(text1.substring(1), lcs(text2.substring()))
