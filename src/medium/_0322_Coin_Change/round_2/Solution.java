@@ -14,7 +14,7 @@ public class Solution {
         System.out.println(s.coinChange(new int[] {186,419,83,408}, 6249)); // 20
     }
 
-    /*  Memoization
+    /*  Dynamic Programming - Bottom Up
         Time complexity: O(S * n)
             S -> amount
             n -> length of the coin array
